@@ -31,7 +31,8 @@ if __name__ == '__main__':
     3. --modify <orderId> --symb <symbol>[--qty <QTY> --type <TYPE> --limitPrice <PRICE> --stopPrice <PRICE>]   modifing order.
     4. --history <orderID>|--history    specific or history | retrives orders placed current trading day.              
     5. --cancel <orderID>               to cancel an order.
-
+    6. --holding <product>              to fetch holding using product type.
+    
     Options:
     
     --qty <QTY>                     Specify quantity. for *Modified Its Open Qty/Pending Qty plus Filled Shares (cumulative for the order) for the order.
