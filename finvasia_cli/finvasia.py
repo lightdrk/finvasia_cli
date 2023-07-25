@@ -1,9 +1,10 @@
+from helper.files import cred , credFetch
 from helper.orderBook import orderBook
 from helper.holding import Holdings
+from helper.login import checking
 from helper.cancel import cancel
 from helper.modify import modify
 from helper.order import order
-from helper.files import cred
 from colorama import Fore
 import argparse
 
@@ -132,8 +133,15 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.generate:
-        if cred() == 1:
-            print(Fore.GREEN+'================GENERATED=================')
+        cred()
+        try:
+            tick = checking(credFetch)
+            if  tick:
+                print(Fore.GREEN+'================GENERATED=================')
+        except:
+            print(Fore.RED+'================UNABLE GENERATED=================')  
+        
+            
     elif args.modify:
         exchange_trade = [None,None]
         if args.symb:
